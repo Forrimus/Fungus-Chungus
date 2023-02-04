@@ -1,0 +1,181 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 3.png" type="Texture" id=8]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 2.png" type="Texture" id=9]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 4.png" type="Texture" id=10]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 6.png" type="Texture" id=11]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 7.png" type="Texture" id=12]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 8.png" type="Texture" id=13]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 1-2.png" type="Texture" id=14]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 2-2.png" type="Texture" id=15]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 3-2.png" type="Texture" id=16]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 1.png" type="Texture" id=17]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 5.png" type="Texture" id=18]
+[ext_resource path="res://Rock.gd" type="Script" id=19]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 8-2.png" type="Texture" id=20]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 5-2.png" type="Texture" id=22]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 7-2.png" type="Texture" id=23]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 4-2.png" type="Texture" id=24]
+[ext_resource path="res://Fungus Chungus Assets/Rocks/Rock 6-2.png" type="Texture" id=25]
+
+[node name="Small_Rock" type="Node2D"]
+script = ExtResource( 19 )
+
+[node name="Small_Rock 1" type="Sprite" parent="."]
+texture = ExtResource( 17 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 1/Area2D"]
+visible = false
+polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
+
+[node name="Small_Rock 2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 2/Area2D"]
+visible = false
+polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
+
+[node name="Small_Rock 3" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 3/Area2D"]
+visible = false
+polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
+
+[node name="Small_Rock 4" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 10 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 4/Area2D"]
+visible = false
+polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
+
+[node name="Small_Rock 5" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 18 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 5"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 5/Area2D"]
+visible = false
+polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )
+
+[node name="Small_Rock 6" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 6"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 6/Area2D"]
+visible = false
+polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )
+
+[node name="Small_Rock 7" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 7"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 7/Area2D"]
+visible = false
+polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )
+
+[node name="Small_Rock 8" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 13 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 8"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 8/Area2D"]
+visible = false
+polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )
+
+[node name="Small_Rock 1-2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 14 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 1-2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 1-2/Area2D"]
+visible = false
+polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
+
+[node name="Small_Rock 2-2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 15 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 2-2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 2-2/Area2D"]
+visible = false
+polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
+
+[node name="Small_Rock 3-2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 16 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 3-2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 3-2/Area2D"]
+visible = false
+polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
+
+[node name="Small_Rock 4-2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 24 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 4-2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 4-2/Area2D"]
+visible = false
+polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
+
+[node name="Small_Rock 5-2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 22 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 5-2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 5-2/Area2D"]
+visible = false
+polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )
+
+[node name="Small_Rock 6-2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 25 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 6-2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 6-2/Area2D"]
+visible = false
+polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )
+
+[node name="Small_Rock 7-2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 23 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 7-2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 7-2/Area2D"]
+visible = false
+polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )
+
+[node name="Small_Rock 8-2" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 20 )
+
+[node name="Area2D" type="Area2D" parent="Small_Rock 8-2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 8-2/Area2D"]
+visible = false
+polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )

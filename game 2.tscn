@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Pool.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=2]
+
+[node name="game 2" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="Pool" parent="." instance=ExtResource( 1 )]
+position = Vector2( 115, 97 )
+scale = Vector2( 1.19487, 1.19487 )
+type = 1
+
+[node name="Pool2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 227, 98 )
+scale = Vector2( 1.65838, 1.65838 )

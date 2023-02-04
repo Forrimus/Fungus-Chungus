@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://StartButton.gd" type="Script" id=1]
+[ext_resource path="res://Fungus Chungus Assets/Title screen BG.jpg" type="Texture" id=2]
+[ext_resource path="res://Fungus Chungus Assets/Title screen/start 50%.png" type="Texture" id=3]
+[ext_resource path="res://Fungus Chungus Assets/Title screen/exit 50%.png" type="Texture" id=4]
+[ext_resource path="res://ExitButton.gd" type="Script" id=5]
+[ext_resource path="res://Fungus Chungus Assets/Title screen/start 85%.png" type="Texture" id=6]
+[ext_resource path="res://Fungus Chungus Assets/Title screen/exit 85%.png" type="Texture" id=7]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TitleScreenBg" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+texture = ExtResource( 2 )
+
+[node name="Start Button" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Start50" type="Sprite" parent="Start Button"]
+position = Vector2( 960, 500 )
+texture = ExtResource( 3 )
+
+[node name="Start85" type="Sprite" parent="Start Button"]
+texture = ExtResource( 6 )
+
+[node name="Exit Button" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Exit50" type="Sprite" parent="Exit Button"]
+position = Vector2( 960, 800 )
+texture = ExtResource( 4 )
+
+[node name="Exit85" type="Sprite" parent="Exit Button"]
+texture = ExtResource( 7 )

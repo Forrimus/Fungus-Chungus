@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Too Relaxed.mp3-1f6799f1c351682cd4f6aabc9ad25591.mp3str"
+
+[deps]
+
+source_file="res://Fungus Chungus Assets/Too Relaxed.mp3"
+dest_files=[ "res://.import/Too Relaxed.mp3-1f6799f1c351682cd4f6aabc9ad25591.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

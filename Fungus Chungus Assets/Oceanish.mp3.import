@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Oceanish.mp3-4bc4dc50915317deeff3d896457673eb.mp3str"
+
+[deps]
+
+source_file="res://Fungus Chungus Assets/Oceanish.mp3"
+dest_files=[ "res://.import/Oceanish.mp3-4bc4dc50915317deeff3d896457673eb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

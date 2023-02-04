@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://Fungus Chungus Assets/Oceanish.mp3" type="AudioStream" id=1]
 [ext_resource path="res://RootNetwork.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=3]
 
 [node name="Game" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 24 )
 
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0
@@ -10,3 +15,7 @@ margin_bottom = 40.0
 
 [node name="RootNetwork" parent="." instance=ExtResource( 2 )]
 position = Vector2( 316, 204 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true

@@ -4,15 +4,9 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Root" parent="." instance=ExtResource( 2 )]
-position = Vector2( 464, 272 )
-
-[node name="Root1" parent="Root" instance=ExtResource( 2 )]
-
-[node name="Root2" parent="Root" instance=ExtResource( 2 )]
-
-[node name="Root3" parent="Root" instance=ExtResource( 2 )]
-
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="RootNetwork" parent="." instance=ExtResource( 2 )]
+position = Vector2( 316, 204 )

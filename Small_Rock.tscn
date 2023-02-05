@@ -22,6 +22,7 @@
 script = ExtResource( 19 )
 
 [node name="Small_Rock 1" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 17 )
 
 [node name="Area2D" type="Area2D" parent="Small_Rock 1"]
@@ -37,7 +38,6 @@ texture = ExtResource( 9 )
 [node name="Area2D" type="Area2D" parent="Small_Rock 2"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Small_Rock 2/Area2D"]
-visible = false
 polygon = PoolVector2Array( -3, -7, 1, -7, 7, -1, 7, 3, 4, 6, -5, 6, -7, 4, -7, 0, -6, -1, -6, -3, -5, -4, -5, -5 )
 
 [node name="Small_Rock 3" type="Sprite" parent="."]

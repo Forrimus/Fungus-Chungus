@@ -1,35 +1,40 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fungus Chungus Assets/Oceanish.mp3" type="AudioStream" id=1]
 [ext_resource path="res://RootNetwork.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Pool.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Timer.gd" type="Script" id=4]
 [ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=5]
+[ext_resource path="res://Fungus Chungus Assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 6 )
 
 [node name="Game" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0, 24 )
+position = Vector2( 960, 540 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="RootNetwork" parent="." instance=ExtResource( 2 )]
-position = Vector2( 316, 204 )
+position = Vector2( 971, 503 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 script = ExtResource( 5 )
 
-[node name="pool" parent="." instance=ExtResource( 4 )]
-position = Vector2( 499, 151 )
+[node name="Timer" type="Label" parent="."]
+margin_left = 1780.0
+margin_top = 3.0
+margin_right = 1915.0
+margin_bottom = 83.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+script = ExtResource( 4 )
 
-[node name="pool2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 723, 387 )
-
-[node name="pool3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 817, 185 )
-
-[node name="pool4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 152, 221 )
+[connection signal="gui_input" from="Timer" to="Timer" method="_on_Timer_gui_input"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Fungus Chungus Assets/Oceanish.mp3" type="AudioStream" id=1]
 [ext_resource path="res://RootNetwork.tscn" type="PackedScene" id=2]
@@ -6,11 +6,19 @@
 [ext_resource path="res://Timer.gd" type="Script" id=4]
 [ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=5]
 [ext_resource path="res://Fungus Chungus Assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Node2D.gd" type="Script" id=7]
+[ext_resource path="res://Randomizer.gd" type="Script" id=7]
+[ext_resource path="res://Fungus Chungus Assets/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Fungus Chungus Assets/Title screen/start 50%.png" type="Texture" id=9]
+[ext_resource path="res://Fungus Chungus Assets/Title screen/start 85%.png" type="Texture" id=10]
+[ext_resource path="res://StartButton.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
 font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 8 )
 
 [node name="Game" type="Node2D"]
 
@@ -30,15 +38,6 @@ position = Vector2( 971, 503 )
 stream = ExtResource( 1 )
 script = ExtResource( 5 )
 
-[node name="Timer" type="Label" parent="."]
-margin_left = 1780.0
-margin_top = 3.0
-margin_right = 1915.0
-margin_bottom = 83.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 1 )
-script = ExtResource( 4 )
-
 [node name="Randomizer" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
@@ -48,4 +47,42 @@ position = Vector2( 32, 28 )
 [node name="ExtentB" type="Position2D" parent="Randomizer"]
 position = Vector2( 1893, 1051 )
 
+[node name="Timer" type="Label" parent="."]
+margin_left = 1780.0
+margin_top = 3.0
+margin_right = 1915.0
+margin_bottom = 83.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="YouWin" type="Label" parent="."]
+visible = false
+margin_left = 838.0
+margin_top = 336.0
+margin_right = 1036.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 2 )
+text = "You Win!"
+
+[node name="YouLose" type="Label" parent="."]
+visible = false
+margin_left = 838.0
+margin_top = 336.0
+margin_right = 1036.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 2 )
+text = "You Lose..."
+
+[node name="StartButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 726.0
+margin_top = 580.0
+margin_right = 1238.0
+margin_bottom = 836.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+script = ExtResource( 11 )
+
 [connection signal="gui_input" from="Timer" to="Timer" method="_on_Timer_gui_input"]
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]

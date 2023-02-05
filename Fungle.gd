@@ -128,12 +128,12 @@ func _input(event):
 func spawn_cluster():
 	priority += 1.0
 	assert(is_tip())
-	var num = randi() % 2 + randi() % 2 + randi() % 2 + 1
+	var num = randi() % 3 + 3
 	print("Spawned", num)
 	var spread = TAU / 3
 	var start_angle = -TAU/6 + (randf() - 0.5) * TAU / 9
-	for i in range(num+1):
-		var angle = start_angle + (float(i)/float(num)) * spread
+	for i in range(num):
+		var angle = start_angle + (float(i)/float(num-1)) * spread
 		spawn(angle)
 
 func spawn(direction):
@@ -163,7 +163,7 @@ func _on_Area2D_area_entered(area):
 			global_position = area.global_position
 			nodule = nod
 			on_nodule = true
-			nodule_flow = 10.0
+			nodule_flow = 8.0
 			nod.connected = true
 		else:
 			stuck = true

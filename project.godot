@@ -26,9 +26,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Fungus Chungus Amongus"
+config/name="Fungus Chungus"
 run/main_scene="res://Title_Screen.tscn"
-config/icon="res://icon.png"
+config/icon="res://fungus-chungus.png"
 
 [display]
 

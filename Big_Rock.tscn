@@ -25,7 +25,6 @@ visible = false
 polygon = PoolVector2Array( -5, -14, -4, -15, -1, -15, 1, -13, 3, -13, 5, -11, 5, -7, 6, -6, 6, -2, 7, -1, 7, 6, 6, 7, 6, 11, 7, 12, 7, 14, 6, 15, -4, 15, -5, 14, -5, 13, -6, 12, -6, 10, -7, 9, -7, 5, -6, 4, -6, 2, -5, 1, -5, -1, -4, -2, -4, -3, -5, -4, -5, -10, -4, -11, -5, -12 )
 
 [node name="Big_Rock 2" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="Big_Rock 2"]
@@ -35,6 +34,7 @@ visible = false
 polygon = PoolVector2Array( -2, -14, -1, -15, 2, -15, 3, -14, 4, -14, 6, -12, 6, -5, 7, -4, 7, 5, 6, 6, 6, 8, 5, 9, 5, 14, 4, 15, -4, 15, -6, 13, -6, 8, -7, 7, -7, -1, -6, -2, -6, -4, -5, -5, -5, -7, -5, -8, -4, -9, -4, -10, -3, -11, -3, -12, -2, -13 )
 
 [node name="Big_Rock 3" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 6 )
 
 [node name="Area2D" type="Area2D" parent="Big_Rock 3"]

@@ -27,4 +27,7 @@ func _process(delta):
 		if c is Fungle:
 			c.propagate_after_update(null)
 			break
+	
+	if Input.is_action_just_pressed("Escape"):        #Quit Game
+		get_tree().quit()
 		

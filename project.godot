@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Fungus Chungus Amongus"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://Title_Screen.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -33,6 +33,14 @@ window/size/fullscreen=true
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+Escape={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [physics]
 

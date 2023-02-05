@@ -4,7 +4,7 @@ enum PoolType { Pool1, Pool2 }
 export(PoolType) var type
 
 var resource_override = null
-var max_resources  = rand_range(100, 250)
+var max_resources  = rand_range(150, 450)
 var resources = max_resources
 
 var connected = false

@@ -40,13 +40,17 @@ func _process(delta):
 			c.propagate_after_update(null, delta)
 			break
 		
-	var any_tips = false
+	var any_nodules = false
 	for c in get_children():
-		if c is Fungle and c.is_tip():
-			any_tips = true
-	if not any_tips:
+		if c is Fungle and c.on_nodule:
+			any_nodules = true
+	if not any_nodules:
 		# game over
 		get_parent().get_node("AudioStreamPlayer").stop()
+		get_parent().get_node("Timer").timer_enabled = false
+		get_parent().get_node("YouLose").visible = true
+		get_parent().get_node("StartButton").visible = true
+		
 	
 	if Input.is_action_just_pressed("Escape"):        #Quit Game
 		get_tree().quit()

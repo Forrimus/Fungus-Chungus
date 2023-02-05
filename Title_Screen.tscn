@@ -32,9 +32,5 @@ margin_bottom = 967.0
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 7 )
 
-[connection signal="mouse_entered" from="StartButton" to="." method="_on_StartButton_mouse_entered"]
-[connection signal="mouse_exited" from="StartButton" to="." method="_on_StartButton_mouse_exited"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="mouse_entered" from="ExitButton" to="." method="_on_ExitButton_mouse_entered"]
-[connection signal="mouse_exited" from="ExitButton" to="." method="_on_ExitButton_mouse_exited"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

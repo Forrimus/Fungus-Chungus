@@ -11,6 +11,7 @@
 [ext_resource path="res://Rock.gd" type="Script" id=9]
 
 [node name="Big_Rock" type="Node2D"]
+scale = Vector2( 4, 4 )
 script = ExtResource( 9 )
 
 [node name="Big_Rock 1" type="Sprite" parent="."]
@@ -74,6 +75,7 @@ visible = false
 polygon = PoolVector2Array( -2, -14, -1, -15, 2, -15, 3, -14, 4, -14, 6, -12, 6, -5, 7, -4, 7, 5, 6, 6, 6, 8, 5, 9, 5, 14, 4, 15, -4, 15, -6, 13, -6, 8, -7, 7, -7, -1, -6, -2, -6, -4, -5, -5, -5, -7, -5, -8, -4, -9, -4, -10, -3, -11, -3, -12, -2, -13 )
 
 [node name="Big_Rock 3-2" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="Big_Rock 3-2"]

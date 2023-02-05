@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fungus Chungus Assets/Oceanish.mp3" type="AudioStream" id=1]
 [ext_resource path="res://RootNetwork.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Timer.gd" type="Script" id=4]
 [ext_resource path="res://AudioStreamPlayer.gd" type="Script" id=5]
 [ext_resource path="res://Fungus Chungus Assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Node2D.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -16,6 +17,7 @@ font_data = ExtResource( 6 )
 [node name="Background" parent="." instance=ExtResource( 3 )]
 position = Vector2( 960, 540 )
 scale = Vector2( 0.25, 0.25 )
+z_index = -1000
 
 [node name="UI" type="Control" parent="."]
 margin_right = 40.0
@@ -36,5 +38,14 @@ margin_bottom = 83.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 1 )
 script = ExtResource( 4 )
+
+[node name="Randomizer" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="ExtentA" type="Position2D" parent="Randomizer"]
+position = Vector2( 32, 28 )
+
+[node name="ExtentB" type="Position2D" parent="Randomizer"]
+position = Vector2( 1893, 1051 )
 
 [connection signal="gui_input" from="Timer" to="Timer" method="_on_Timer_gui_input"]

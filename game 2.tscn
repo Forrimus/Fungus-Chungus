@@ -8,10 +8,11 @@
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
 [node name="Pool" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1.37, 1.37, 1.37, 1 )
 position = Vector2( 115, 97 )
-scale = Vector2( 1.19487, 1.19487 )
+scale = Vector2( 1.74245, 1.74245 )
 type = 1
 
 [node name="Pool2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 227, 98 )
-scale = Vector2( 1.65838, 1.65838 )
+scale = Vector2( 2.01202, 2.01202 )

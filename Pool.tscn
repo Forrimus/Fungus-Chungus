@@ -8,7 +8,7 @@
 radius = 16.0312
 
 [node name="pool" type="Node2D"]
-scale = Vector2( 1.74245, 1.74245 )
+scale = Vector2( 1.05576, 1.05576 )
 script = ExtResource( 3 )
 
 [node name="Pool 1" type="Sprite" parent="."]

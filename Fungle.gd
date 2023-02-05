@@ -3,7 +3,7 @@ class_name Fungle
 
 const deg120 = TAU / 3.0
 const start_length = 3.0
-const base_speed = 10.0
+const base_speed = 30.0
 
 var mouse_position = Vector2.ZERO
 
@@ -23,12 +23,13 @@ func propagate_after_update(from, delta):
 
 var stuck = false
 var on_nodule = false
+var nodule = null
 var nodule_flow = 0.0
-var priority = 1.0
+var priority = 0.1
 func _before_update(delta):
 	
 	if neibs.size() > 1:
-		priority = 0.2
+		priority = 0.05
 		var priority_from = []
 		var supply_from = []
 		for n in neibs:
@@ -55,25 +56,38 @@ func _before_update(delta):
 		for i in range(neibs.size()):
 			neibs[i].send_priority(self, denoms[i] + priority)
 	
-	else:
-		assert(neibs.size() == 1)
-		
+	elif neibs.size() == 1:
 		if on_nodule:
 			neibs[0].send_supply(self, nodule_flow)
-			neibs[0].send_priority(self, 0.01)
+			neibs[0].send_priority(self, 0.001)
+			nodule.resources = max(0.0, nodule.resources - nodule_flow * delta)
+			if nodule.resources <= 0.0:
+				on_nodule = false
+				nodule.queue_free()
+				nodule = null
+				nodule_flow = 0.0
 		else:
-			priority = max(0.1, priority * 0.995)
+#			priority = max(0.0001, priority * 0.995)
 			neibs[0].send_priority(self, priority)
 			if neibs[0].receive_supply(self) >= 1:
 				neibs[0].send_supply(self, 0.0)
 			else:
 				neibs[0].send_supply(self, 0.5)
+	else:
+		queue_free()
 
+var time_alive = 0
 func _process(delta):
+	time_alive += delta
+	var growth_speed = max(0, base_speed - time_alive*5.0)
 	if is_growing():
-		position += neibs[0].get_direction(self) * base_speed * delta
+		position += neibs[0].get_direction(self) * growth_speed * delta
 	elif is_shrinking():
-		position -= neibs[0].get_direction(self) * base_speed * 0.8 * delta
+		var is_stuck = false
+		for a in $Area2D.get_overlapping_areas():
+			if a.get_parent() is Tendril:
+				is_stuck = true
+		position -= neibs[0].get_direction(self) * base_speed * 0.5 * delta
 	
 func _neighbour_die(n):
 	neibs.erase(n)
@@ -87,8 +101,11 @@ func _neighbour_dead(n):
 		queue_free()
 
 func _draw():
-	if is_growing() and self.global_position.distance_to(mouse_position) < 10:
+	if is_tip() and self.global_position.distance_to(mouse_position) < 10:
 		draw_circle(Vector2.ZERO, 10, Color.palegreen)
+
+func is_tip():
+	return not stuck and not on_nodule and neibs.size() == 1
 
 func is_growing():
 	return not stuck and not on_nodule and neibs.size() == 1 and neibs[0].receive_supply(self) >= 1
@@ -103,11 +120,11 @@ func _input(event):
 		
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.is_pressed():
-			if is_growing() and self.global_position.distance_to(mouse_position) < 10:
+			if is_tip() and self.global_position.distance_to(mouse_position) < 10:
 				spawn_cluster()
 
 func spawn_cluster():
-	assert(is_growing())
+	assert(is_tip())
 	var num = randi() % 2 + randi() % 2 + randi() % 2 + 1
 	print("Spawned", num)
 	var spread = TAU / 3
@@ -130,10 +147,22 @@ func spawn(direction):
 	get_parent().add_child(fungle)
 
 func _on_Area2D_area_entered(area):
-	if not area.get_parent() is Tendril:
-		return
-	for n in neibs:
-		if area.get_parent() == n:
-			return
-	print("Collision")
-	stuck = true
+	if area.get_parent() is Tendril:
+		for n in neibs:
+			if area.get_parent() == n:
+				return
+		stuck = true
+	elif area.get_parent().name.findn("Pool") != -1:
+		global_position = area.global_position
+		
+		on_nodule = true
+		nodule = area.get_parent().get_parent()
+		nodule_flow = 10.0
+
+
+func _on_Area2D_area_exited(area):
+	if area.get_parent() is Tendril:
+		for n in neibs:
+			if area.get_parent() == n:
+				return
+		stuck = false

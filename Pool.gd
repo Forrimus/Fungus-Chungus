@@ -6,6 +6,8 @@ export(PoolType) var type
 var max_resources  = rand_range(50, 250)
 var resources = max_resources
 
+var connected = false
+
 func _process(delta):
 	if type == PoolType.Pool1:
 		$"Pool 1".visible = true

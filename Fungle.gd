@@ -25,15 +25,19 @@ var stuck = false
 var on_nodule = false
 var nodule = null
 var nodule_flow = 0.0
-var priority = 0.1
+var priority = 1.0
 func _before_update(delta):
 	
 	if neibs.size() > 1:
-		priority = 0.05
+		
 		var priority_from = []
 		var supply_from = []
-		for n in neibs:
-			priority_from.append(n.receive_priority(self))
+		for i in range(neibs.size()):
+			var n = neibs[i]
+			var lower_parent_priority = 1.0
+			if i == 0:
+				lower_parent_priority = 0.01
+			priority_from.append(n.receive_priority(self) * lower_parent_priority)
 			supply_from.append(n.receive_supply(self))
 		
 		var denoms = []
@@ -54,7 +58,7 @@ func _before_update(delta):
 			neibs[i].send_supply(self, supply_to)
 		
 		for i in range(neibs.size()):
-			neibs[i].send_priority(self, denoms[i] + priority)
+			neibs[i].send_priority(self, (denoms[i] + priority) * 0.99)
 	
 	elif neibs.size() == 1:
 		if on_nodule:
@@ -67,7 +71,7 @@ func _before_update(delta):
 				nodule = null
 				nodule_flow = 0.0
 		else:
-#			priority = max(0.0001, priority * 0.995)
+			priority = max(0.1, priority * 0.995)
 			neibs[0].send_priority(self, priority)
 			if neibs[0].receive_supply(self) >= 1:
 				neibs[0].send_supply(self, 0.0)
@@ -124,6 +128,7 @@ func _input(event):
 				spawn_cluster()
 
 func spawn_cluster():
+	priority += 1.0
 	assert(is_tip())
 	var num = randi() % 2 + randi() % 2 + randi() % 2 + 1
 	print("Spawned", num)
@@ -155,9 +160,14 @@ func _on_Area2D_area_entered(area):
 	elif area.get_parent().name.findn("Pool") != -1:
 		global_position = area.global_position
 		
-		on_nodule = true
-		nodule = area.get_parent().get_parent()
-		nodule_flow = 10.0
+		var nod = area.get_parent().get_parent()
+		if not nod.connected:
+			nodule = nod
+			on_nodule = true
+			nodule_flow = 10.0
+			nod.connected = true
+		else:
+			stuck = true
 
 
 func _on_Area2D_area_exited(area):

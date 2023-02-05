@@ -81,7 +81,6 @@ visible = false
 polygon = PoolVector2Array( 0, -7, 5, -7, 6, -6, 6, -3, 7, -2, 7, 3, 3, 7, -4, 7, -7, 4, -7, 0, -6, -1, -6, -2, -2, -6, -1, -6 )
 
 [node name="Small_Rock 7" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 12 )
 
 [node name="Area2D" type="Area2D" parent="Small_Rock 7"]

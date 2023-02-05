@@ -3,12 +3,17 @@ signal Empty
 enum PoolType { Pool1, Pool2 }
 export(PoolType) var type
 
-var max_resources  = rand_range(50, 250)
+var resource_override = null
+var max_resources  = rand_range(100, 250)
 var resources = max_resources
 
 var connected = false
 
 func _process(delta):
+	if resource_override != null:
+		max_resources = resource_override
+		resources = max_resources
+		resource_override = null
 	if type == PoolType.Pool1:
 		$"Pool 1".visible = true
 		$"Pool 2".visible = false

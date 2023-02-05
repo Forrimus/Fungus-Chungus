@@ -95,8 +95,8 @@ func _neighbour_die(from):
 	queue_free()
 
 func _draw():
-	var net_supply = abs(supply_to_a - supply_to_b)
-	var c = (log(net_supply) + 2.0) / 6.0 + 0.3
+	var net_supply = abs(supply_to_a + supply_to_b)
+	var c = (log(net_supply) + 2.0) / 6.0 + 0.4
 	draw_line(to_local(a.global_position), to_local(b.global_position), Color(c, c, 0.7), min_width)
 	
 	
